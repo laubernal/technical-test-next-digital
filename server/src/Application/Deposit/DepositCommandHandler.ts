@@ -20,5 +20,7 @@ export class DepositCommandHanlder implements ICommandHandler<DepositCommand> {
 
     // Get account card number belongs -> get account by id
     const account = await this.accountRepository.findOneById(card.accountId());
+
+    account.deposit(amount);
   }
 }
