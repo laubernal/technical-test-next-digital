@@ -1,4 +1,4 @@
-import { Card } from 'src/Domain/Entity/Card';
+import { Card } from '../../../src/Domain/Entity/Card';
 
 export class CardMother {
   public static standard(): Card {

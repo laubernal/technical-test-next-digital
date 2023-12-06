@@ -1,5 +1,4 @@
-import { Account } from 'src/Domain/Entity/Account';
-import { Card } from 'src/Domain/Entity/Card';
+import { Account } from '../../../src/Domain/Entity/Account';
 
 export class AccountMother {
   public static standard(): Account {

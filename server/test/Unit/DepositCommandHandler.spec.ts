@@ -1,10 +1,9 @@
-import { Card } from 'src/Domain/Entity/Card';
 import { CardMother } from './Mother/CardMother';
 import { AccountMother } from './Mother/AccountMother';
-import { Account } from 'src/Domain/Entity/Account';
-import { CryptoService } from 'src/Shared/Domain/CryptoService';
-import { DepositCommandHandler } from 'src/Application/Deposit/DepositCommandHandler';
-import { DepositCommand } from 'src/Application/Deposit/DepositCommand';
+import { Account } from '../../src/Domain/Entity/Account';
+import { CryptoService } from '../../src/Shared/Domain/CryptoService';
+import { DepositCommandHandler } from '../../src/Application/Deposit/DepositCommandHandler';
+import { DepositCommand } from '../../src/Application/Deposit/DepositCommand';
 
 describe('DepositCommandHandler', () => {
   let cardRepository;
