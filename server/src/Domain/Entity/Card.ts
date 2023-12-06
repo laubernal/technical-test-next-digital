@@ -2,7 +2,7 @@ export class Card {
   constructor(
     private readonly _id: string,
     private readonly _cardNumber: string,
-    private readonly _pin: number,
+    private readonly _pin: string,
     private readonly _type: string,
     private readonly _isActive: boolean,
     private readonly _accountId: string,
@@ -16,7 +16,7 @@ export class Card {
     return this._cardNumber;
   }
 
-  public pin(): number {
+  public pin(): string {
     return this._pin;
   }
 
