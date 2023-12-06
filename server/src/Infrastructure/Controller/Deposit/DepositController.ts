@@ -1,4 +1,4 @@
-import { Controller, Post, Req, Res } from '@nestjs/common';
+import { Controller, Post, Body, Res } from '@nestjs/common';
 import { CommandBus } from '@nestjs/cqrs';
 import { Response } from 'express';
 import { DepositCommand } from 'src/Application/Deposit/DepositCommand';
@@ -11,14 +11,14 @@ export class DepositController {
 
   @Post('/api/deposit')
   public async post(
-    @Req() request: DepositRequest,
+    @Body() body: DepositRequest,
     @Res() response: Response,
   ): Promise<void> {
     try {
       const command = new DepositCommand(
-        request.cardNumber,
-        request.pin,
-        request.amount,
+        body.cardNumber,
+        body.pin,
+        body.amount,
       );
 
       await this.commandBus.execute(command);
