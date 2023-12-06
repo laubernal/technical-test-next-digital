@@ -6,13 +6,17 @@ import { IAccountRepository } from 'src/Domain/Repository/IAccountRepository';
 import { CryptoService } from 'src/Shared/Domain/CryptoService';
 import { Card } from 'src/Domain/Entity/Card';
 import { NotValidPinError } from 'src/Domain/Error/NotValidPinError';
+import {
+  IACCOUNT_REPOSITORY,
+  ICARD_REPOSITORY,
+} from 'src/Shared/Domain/Constants';
 
 @CommandHandler(DepositCommand)
-export class DepositCommandHanlder implements ICommandHandler<DepositCommand> {
+export class DepositCommandHandler implements ICommandHandler<DepositCommand> {
   constructor(
-    @Inject('ICardRepository')
+    @Inject(ICARD_REPOSITORY)
     private readonly cardRepository: ICardRepository,
-    @Inject('IAccountRepository')
+    @Inject(IACCOUNT_REPOSITORY)
     private readonly accountRepository: IAccountRepository,
     private readonly cryptoService: CryptoService,
   ) {}
