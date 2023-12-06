@@ -35,6 +35,8 @@ export class DepositCommandHandler implements ICommandHandler<DepositCommand> {
     const account = await this.accountRepository.findOneById(card.accountId());
 
     account.deposit(amount);
+
+    await this.accountRepository.save(account);
   }
 
   private async isValidPin(card: Card, pin: number): Promise<boolean> {
