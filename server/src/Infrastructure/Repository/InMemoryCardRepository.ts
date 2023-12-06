@@ -1,6 +1,5 @@
 import { Card } from 'src/Domain/Entity/Card';
 import { ICardRepository } from 'src/Domain/Repository/ICardRepository';
-import { CryptoService } from 'src/Shared/Domain/CryptoService';
 
 export class InMemoryCardRepository implements ICardRepository {
   public findOneByCardNumber(cardNumber: string): Promise<Card> {
