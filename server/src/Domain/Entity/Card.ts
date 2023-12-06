@@ -5,6 +5,7 @@ export class Card {
     private readonly _pin: number,
     private readonly _type: string,
     private readonly _isActive: boolean,
+    private readonly _accountId: string,
   ) {}
 
   public id(): string {
@@ -25,5 +26,9 @@ export class Card {
 
   public isActive(): boolean {
     return this._isActive;
+  }
+
+  public accountId(): string {
+    return this._accountId;
   }
 }
