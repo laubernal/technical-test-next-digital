@@ -13,17 +13,6 @@ describe('DepositCommandHandler', () => {
 
   beforeEach(() => {
     cardRepository = {
-      findOneByCardNumber: async (cardNumber: string) =>
-        Promise.resolve(CardMother.standard()),
-    };
-
-    accountRepository = {
-      findOneById: async (id: string) =>
-        Promise.resolve(AccountMother.standard()),
-      save: async (account: Account) => Promise.resolve(),
-    };
-
-    cardRepository = {
       findOneByCardNumber: jest.fn(),
     };
 
