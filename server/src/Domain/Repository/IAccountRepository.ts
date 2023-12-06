@@ -1,3 +1,5 @@
 import { Account } from '../Entity/Account';
 
-export interface IAccountRepository {}
+export interface IAccountRepository {
+  findOneById(id: string): Promise<Account>;
+}
